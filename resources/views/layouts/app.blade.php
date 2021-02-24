@@ -27,6 +27,8 @@
         </header>
 
         <div class="container">
+            @include('tasks.error_tasks')
+            
             @yield('content')
         </div>
 
