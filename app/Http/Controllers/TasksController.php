@@ -13,6 +13,11 @@ class TasksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+   public function __construct()
+    {
+        $this->middleware('auth');
+    }
+   
     public function index()
     {
         $tasks = Task::all();
@@ -78,6 +83,7 @@ class TasksController extends Controller
     {
         
         $task = Task::findOrFail($id);
+        
 
         return view('tasks.show', [
             'task' => $task,
