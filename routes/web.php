@@ -12,10 +12,10 @@
 */
 
 Route::get('/','TasksController@index');
-// Route::resource('tasks', 'TasksController');
-Route::group(['middleware' => ['auth']], function () {
-    Route::resource('tasks', 'TasksController', ['only' => ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy']]);
-});
+Route::resource('tasks', 'TasksController');
+// Route::group(['middleware' => ['auth']], function () {
+//     Route::resource('tasks', 'TasksController', ['only' => ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy']]);
+// });
 
 
 // ユーザ登録
